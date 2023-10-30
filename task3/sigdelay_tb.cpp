@@ -26,8 +26,8 @@ int main(int argc, char **argv, char **env) {
   //vbdSetMode(1);        // Flag mode set to one-shot
 
   // initialize simulation input 
-  top->clk = 1;
-  top->rst = 0;
+  top->_clk = 1;
+  top->_rst = 0;
   top->wr = 1;
   top->rd = 1;
   top->offset = 64;
@@ -40,7 +40,7 @@ int main(int argc, char **argv, char **env) {
     // dump variables into VCD file and toggle clock
     for (tick=0; tick<2; tick++) {
       tfp->dump (2*simcyc+tick);
-      top->clk = !top->clk;
+      top->_clk = !top->_clk;
       top->eval ();
     }
     top->mic_signal = vbdMicValue();

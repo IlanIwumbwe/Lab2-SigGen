@@ -1,6 +1,6 @@
 module ram #(
     parameter DATA_WIDTH = 8,
-    parameter ADDRESS_WIDTH = 9
+    ADDRESS_WIDTH = 9
 )(
     input logic [ADDRESS_WIDTH-1:0] wraddr,
     input logic [ADDRESS_WIDTH-1:0] raddr,
